@@ -18,3 +18,6 @@ python comand line module manager
 * Definition __class__: it's the _action_ in your module.
 * __main__ method: it's your start point where you write code.
 * A module could has many __class__ for to have many _actions_.
+
+### Coming soon
+* api full-rest for custom modules. Provided by flask micro-framework.
