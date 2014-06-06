@@ -41,7 +41,7 @@ class Core:
                         continue
 
                     print Core.Color.green + '  ' + module[0] + ':' + _class[0].lower() + \
-                        "\t" + Core.Color.sys + _class[1].description()
+                        "\t" + Core.Color.sys + str(_class[1].description())
 
     class Help:
 
@@ -54,11 +54,11 @@ class Core:
                 _class = getattr(_attr, _names[1].capitalize())
 
             print Core.Color.brown + 'Usage:'
-            print "\t" + Core.Color.gray + _class.usage()
+            print "\t" + Core.Color.gray + str(_class.usage())
             print Core.Color.brown + 'Arguments:'
-            print "\t" + Core.Color.gray + _class.arguments()
+            print "\t" + Core.Color.gray + str(_class.arguments())
             print Core.Color.brown + 'Help:'
-            print "\t" + Core.Color.gray + _class.help()
+            print "\t" + Core.Color.gray + str(_class.help())
 
     def __init__(self, module, args=None):
 

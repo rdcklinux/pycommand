@@ -1,26 +1,35 @@
 __author__ = 'Roderick Lagunas'
 
+from abc import ABCMeta, abstractmethod
+
 
 class CommandInterface:
+    __metaclass__ = ABCMeta
 
+    @abstractmethod
     def __init__(self):
         pass
 
+    @abstractmethod
     def main(self, args):
-        raise NotImplementedError
+        pass
 
     @staticmethod
+    @abstractmethod
     def description():
-        raise NotImplementedError
+        pass
 
     @staticmethod
+    @abstractmethod
     def usage():
-        raise NotImplementedError
+        pass
 
     @staticmethod
+    @abstractmethod
     def arguments():
-        raise NotImplementedError
+        pass
 
     @staticmethod
+    @abstractmethod
     def help():
-        raise NotImplementedError
+        pass
