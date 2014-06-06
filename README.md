@@ -1,7 +1,7 @@
 pycommand
 =========
 
-python comand line module manager
+python comand line module manager. [_Inspired in symfony2 console_](http://symfony.com/doc/current/cookbook/console/console_command.html)
 
 
 ### Usage:
