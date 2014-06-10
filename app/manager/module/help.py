@@ -1,7 +1,7 @@
 __author__ = 'Roderick Lagunas'
 
-from interface.command import CommandInterface
-from common import command
+from app.manager.interface.command import CommandInterface
+from app.manager.common import command
 
 
 class Message(CommandInterface):
