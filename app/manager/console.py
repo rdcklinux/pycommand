@@ -1,12 +1,17 @@
 # -*- coding: utf-8 -*-
 __author__ = 'Roderick Lagunas'
 
-import sys
-from common import exception, command
-import module
-
-
 if __name__ == "__main__":
+    import os
+    import sys
+
+    root_path = os.path.abspath(__file__ + '../../../..')
+    sys.path = [root_path] + sys.path
+    os.chdir(root_path)
+
+    from app.manager.common import exception, command
+    from app.manager import module
+
     try:
         command.Core(module, sys.argv)
         _names = sys.argv[1].split(':')
