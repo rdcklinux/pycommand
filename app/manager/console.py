@@ -5,7 +5,7 @@ if __name__ == "__main__":
     import os
     import sys
 
-    root_path = os.path.abspath(__file__ + '../../../..')
+    root_path = os.path.abspath(__file__ + '/../../..')
     sys.path = [root_path] + sys.path
     os.chdir(root_path)
 
