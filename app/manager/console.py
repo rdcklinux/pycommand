@@ -19,7 +19,16 @@ if __name__ == "__main__":
         _class = getattr(_attr, _names[1].capitalize())
 
         try:
-            _class().main(sys.argv[2:])
+            import re
+            regex = re.compile('^\-{1,2}([a-z|A-Z|0-9]+)=(.+)$')
+            args = dict()
+            for i, arg in enumerate(sys.argv[2:]):
+                result = regex.match(arg)
+                if result:
+                    args[result.group(1)] = args[i] = result.group(2)
+                else:
+                    args[i] = arg
+            _class().main(args)
         except AttributeError, e:
             print 'Implementacion de %s invalida.' % sys.argv[1] + ' message: ' + str(e)
 
