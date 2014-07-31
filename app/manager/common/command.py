@@ -39,9 +39,10 @@ class Core:
                 for _class in inspect.getmembers(module[1], predicate=inspect.isclass):
                     if _class[0] == 'CommandInterface':
                         continue
-
-                    print Core.Color.green + '  ' + module[0] + ':' + _class[0].lower() + \
-                        "\t" + Core.Color.sys + str(_class[1].description())
+                    
+                    if hasattr(_class[1], 'description'):
+                        print Core.Color.green + '  ' + module[0] + ':' + _class[0].lower() + \
+                            "\t" + Core.Color.sys + str(_class[1].description())
 
     class Help:
 
