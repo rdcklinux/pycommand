@@ -3,12 +3,8 @@ __author__ = 'Roderick Lagunas'
 from abc import ABCMeta, abstractmethod
 
 
-class CommandInterface:
+class CommandInterface(object):
     __metaclass__ = ABCMeta
-
-    @abstractmethod
-    def __init__(self):
-        pass
 
     @abstractmethod
     def main(self, args):
