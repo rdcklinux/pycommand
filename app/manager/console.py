@@ -20,12 +20,12 @@ if __name__ == "__main__":
 
         try:
             import re
-            regex = re.compile('^\-{1,2}([a-z|A-Z|0-9]+)=(.+)$')
+            regex = re.compile('^\-{1,2}([\w|\d]+)(=(.+))?$')
             args = dict()
             for i, arg in enumerate(sys.argv[2:]):
                 result = regex.match(arg)
                 if result:
-                    args[result.group(1)] = args[i] = result.group(2)
+                    args[result.group(1)] = args[i] = (result.group(3) if result.group(3) else True)
                 else:
                     args[i] = arg
             _class().main(args)
